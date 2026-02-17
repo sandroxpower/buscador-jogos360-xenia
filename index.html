@@ -1,61 +1,22 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buscador Xenia Canary</title>
+  <title>🎮 Buscador Xenia Canary - 944 Jogos</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
+  <!-- Background Fixo -->
   <div class="background-fixed"></div>
 
-  <div class="container">
-
-    <h1 class="gradient-text">
-      🎮 Buscador Xenia Canary
-    </h1>
-
-    <p class="gradient-text">
-      Total de Jogos: 944 | Gameplay: 688 | Comentários Reais: 296+
-    </p>
-
-    <h2 class="gradient-text">⚙️ Configuração do Hardware</h2>
-
-    <div class="box">
-      <label class="gradient-text">CPU (Processador)</label>
-      <select><option>Intel i5 (4 Cores)</option></select>
-
-      <label class="gradient-text">GPU (Placa de Vídeo)</label>
-      <select><option>GTX 1050</option></select>
-
-      <label class="gradient-text">RAM (Memória)</label>
-      <select><option>16 GB</option></select>
-
-      <label class="gradient-text">Resolução</label>
-      <select><option>1080p (Padrão)</option></select>
-    </div>
-
-    <div class="score gradient-text">
-      Score de Compatibilidade: 11 / 18
-    </div>
-
-    <button>📋 Gerar Configuração</button>
-    <button>🔍 Buscar Jogos</button>
-    <button>🎮 Filtrar por Status</button>
-    <button>📂 Filtrar por Categoria</button>
-
-    <h2 class="gradient-text">🕹️ Jogos Encontrados</h2>
-
-    <p class="gradient-text">Resultados: 66 / 944</p>
-
-    <div class="game gradient-text">Halo 3</div>
-    <div class="game gradient-text">Gears of War 2</div>
-    <div class="game gradient-text">Forza Horizon</div>
-
-  </div>
-
+  <!-- Conteúdo Principal -->
+  <div id="root" class="container"></div>
+  
+  <!-- Modal -->
+  <div id="modal" class="modal"></div>
+  
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
