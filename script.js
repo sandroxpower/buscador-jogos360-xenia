@@ -543,8 +543,9 @@ function render() {
   const modal = document.getElementById('modal');
   if (state.jogoSelecionado) {
     const jogo = state.jogoSelecionado;
+    const backgroundStyle = jogo.imagem ? `style="background-image: url('${jogo.imagem}');"` : '';
     modal.innerHTML = `
-      <div class="modal-content">
+      <div class="modal-content" ${backgroundStyle}>
         <div class="modal-header">
           <h2>${jogo.nome}</h2>
           <button class="close-btn" onclick="closeModal()">×</button>
