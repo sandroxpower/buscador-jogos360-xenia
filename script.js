@@ -129,26 +129,6 @@ function renderJogos() {
       </div>
     `).join('')}
   `;
-
-  // Atualizar botões de status como ativos/inativos
-  document.querySelectorAll('[onclick*="updateFiltroStatus"]').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  
-  const statusBtn = document.querySelector(`[onclick="updateFiltroStatus('${state.filtroStatus}')"]`);
-  if (statusBtn) {
-    statusBtn.classList.add('active');
-  }
-
-  // Atualizar botões de categoria como ativos/inativos
-  document.querySelectorAll('[onclick*="updateFiltroCategoria"]').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  
-  const catBtn = document.querySelector(`[onclick="updateFiltroCategoria('${state.filtroCategoria}')"]`);
-  if (catBtn) {
-    catBtn.classList.add('active');
-  }
 }
 
 function copiarConfig() {
@@ -543,9 +523,8 @@ function render() {
   const modal = document.getElementById('modal');
   if (state.jogoSelecionado) {
     const jogo = state.jogoSelecionado;
-    const backgroundStyle = jogo.imagem ? `style="background-image: url('${jogo.imagem}');"` : '';
     modal.innerHTML = `
-      <div class="modal-content" ${backgroundStyle}>
+      <div class="modal-content">
         <div class="modal-header">
           <h2>${jogo.nome}</h2>
           <button class="close-btn" onclick="closeModal()">×</button>
@@ -623,11 +602,29 @@ function updateBusca(valor) {
 function updateFiltroStatus(status) {
   state.filtroStatus = status;
   renderJogos();
+  
+  // Atualizar botões de status
+  document.querySelectorAll('[onclick*="updateFiltroStatus"]').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  const statusBtn = document.querySelector(`[onclick="updateFiltroStatus('${status}')"]`);
+  if (statusBtn) {
+    statusBtn.classList.add('active');
+  }
 }
 
 function updateFiltroCategoria(categoria) {
   state.filtroCategoria = categoria;
   renderJogos();
+  
+  // Atualizar botões de categoria
+  document.querySelectorAll('[onclick*="updateFiltroCategoria"]').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  const catBtn = document.querySelector(`[onclick="updateFiltroCategoria('${categoria}')"]`);
+  if (catBtn) {
+    catBtn.classList.add('active');
+  }
 }
 
 function selectGame(id) {
